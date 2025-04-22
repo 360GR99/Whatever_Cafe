@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatever</title>
+    <link rel="icon" type="image/x-icon" href="/images/XOM.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        header {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .tour-container {
+            width: 80%;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Lightbox με scaling */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .info-map-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .store-info, .map-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .social-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .fa-facebook, .fa-instagram {
+            font-size: 50px;
+        }
+
+        .button-5 {
+            background-color: #fa6400;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-5:hover {
+            background-color: #fb8332;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 768px) {
+            .info-map-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Whatever</h1>
+    </header>
+
+    <main>
+        <div class="tour-container">
+            <iframe src="https://kuula.co/share/collection/715Ql?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+                width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+         <div class="gallery">
+            <a href="#img1"><img src="images/WHAT_1.jpg" alt=></a>
+            <a href="#img2"><img src="images/WHAT_2.jpg" alt=></a>
+            <a href="#img3"><img src="images/WHAT_3.jpg" alt=></a>
+            <a href="#img4"><img src="images/WHAT_4.jpg" alt=></a>
+            <a href="#img5"><img src="images/WHAT_5.jpg" alt=></a>
+            <!-- Πρόσθεσε όσες φωτογραφίες θέλεις -->
+        </div>
+
+        <!-- Lightbox modals -->
+        <div id="img1" class="lightbox">
+            <a href="#"><img src="images/WHAT_1.jpg" alt="What 1"></a>
+        </div>
+        <div id="img2" class="lightbox">
+            <a href="#"><img src="images/WHAT_2.jpg" alt="What 2"></a>
+        </div>
+        <div id="img3" class="lightbox">
+            <a href="#"><img src="images/WHAT_3.jpg" alt="What 3"></a>
+        </div>
+        <div id="img4" class="lightbox">
+            <a href="#"><img src="images/WHAT_4.jpg" alt="What 4"></a>
+        </div>
+        <div id="img5" class="lightbox">
+            <a href="#"><img src="images/WHAT_5.jpg" alt="What 5"></a>
+        </div>
+
+        <div class="info-map-container">
+            <div class="store-info">
+                <h2>Whatever</h2>
+                <p>Αιμιλίου Βεάκη 43, Περιστέρι 121 34</p>
+                <p>Τηλ: 210 575 5503</p>
+                <div class="social-menu">
+                    <a href="https://www.facebook.com/profile.php?id=100064628021935&locale2=el_GR#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/whatever_bar/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <button class="button-5" role="button" onclick="window.open('https://www.e-food.gr/delivery/peristeri/whatever', '_blank')">MENU</button>
+            </div>
+
+            <div class="map-container">
+                <h2>ΠΟΥ ΘΑ ΜΑΣ ΒΡΕΙΤΕ</h2>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.523818134662!2d23.689584476031218!3d38.01156607192667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a33803e4921f%3A0x6ec1888a1299c2fe!2sWhatever!5e0!3m2!1sen!2sgr!4v1745323354125!5m2!1sen!2sgr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </main>
+</body>
